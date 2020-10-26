@@ -1,0 +1,26 @@
+패키지 폴더 경로 만든후 클래스를 작성한다. 그 이후 빌드법.
+
+
+✔1.javac -cp lib\logback-classic.jar:lib\logback-core.jar:lib\slf4j-api.jar kr\co\fastcampus\Main.java
+
+-> import 한 라이브러리를 클래스패스로 잡고  나의 메인클래스를 컴파일하는 명령어
+
+✔2.java -cp lib\logback-classic.jar;lib\logback-core.jar;lib\slf4j-api.jar; kr.co.fastcampus.Main
+
+-> import 한 라이브러리를 클래스패스로 잡고 나의 컴파일된 메인클래스를 실행하는 명령어
+
+✔3.1. 로그백 설정파일없이
+jar -cvmf manifest.txt fastcampus.jar kr\*
+
+-> 여러가지 명령어가 있지만, 새로운 아키아브(c)생성 하고 생성과정(v) 출력하고 manifest파일설정(m)하고 내보낼 jar파일명(f) 설정하고 마지막으로
+포함시킬 클래스파일들의 경로
+
+✔3.2. 로그백 설정파일 포함
+jar -cvmf manifest.txt fastcampus.jar kr\* logback.xml
+
+-> 여러가지 명령어가 있지만, 새로운 아키아브(c)생성 하고 생성과정(v) 출력하고 manifest파일설정(m)하고 내보낼 jar파일명(f) 설정하고 마지막으로
+포함시킬 클래스파일들의 경로
+
+✔4.java -jar fastcampus.jar
+
+-> jar 파일 실행.
